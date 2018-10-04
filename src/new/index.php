@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 <?php
+=======
+<?php
+
+$pid = uniqid();
+$game_file = 'game.txt';
+$handle = fopen($game_file, 'w');
+fwrite($handle, $pid);
+
+$response = null; 
+$strat = null;
+
+>>>>>>> branch 'master' of https://github.com/lorflo/PLProject1.git
 if (isset($_GET['strategy'])){
     $strat = $_GET['strategy'];
     switch ($strat) {
