@@ -1,11 +1,4 @@
 <?php
-  
-$pid = uniqid();
-
-$response = null; 
-$strat = null;
-
-
 if (isset($_GET['strategy'])){
     $strat = $_GET['strategy'];
     switch ($strat) {
