@@ -12,13 +12,14 @@
                {
                    $response = array('response' => false, 'reason' => "Unknown Player id");
                    
-               }   
+               } 
+               elseif(p_id == null)//no Strategy
+               {
+                   $response =  array('response' => false, 'reason' => "Player id  not specified");
+               }
        }
             
-    elseif(p_id == null)//no Strategy
-    {
-        $response =  array('response' => false, 'reason' => "Player id  not specified");
-    } 
+     
     elseif($response_move != null)
     {
         echo jason_encode($response_move);
