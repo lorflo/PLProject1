@@ -8,8 +8,8 @@ $newFileContent = json_encode($pid);
 
 file_put_contents($newFileName, $newFileContent);//created a php file in writable
 
-$response = null; 
-$strat = null;
+$response; 
+$strat;
 
 if (isset($_GET['strategy']))
 {
