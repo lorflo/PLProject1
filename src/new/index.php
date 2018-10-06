@@ -7,8 +7,8 @@ $handle = fopen($game_file, 'w');
 fwrite($handle, $pid);
 
 
-$response = null; 
-$strat = null;
+$response; 
+$strat;
 
 if (isset($_GET['strategy']))
 {
@@ -17,7 +17,7 @@ if (isset($_GET['strategy']))
         case "Smart":
             $response = array('response' => true, 'pid' => $pid);
         break;
-        case "Ranom":
+        case "Random":
             $response = array('response' => true, 'pid' => $pid);
         break;
         default:
