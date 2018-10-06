@@ -8,11 +8,11 @@
     $response = json_encode(array('response' => true, 'ack_move' => $ack_move));
     $p_id = $_GET['pid'];
     
-   /* if($response_move != null)
+    if($response_move != null)
     {
         $response = json_encode($response_move);
     }
-    */
+    
     if($p_id == null)
     {
         $response =  json_encode(array('response' => false, 'reason' => "Player id  not specified"));
