@@ -1,11 +1,12 @@
 <?php
 
 $pid = uniqid();
-global $game_file;
-$game_file = 'game.txt';
-$handle = fopen($game_file, 'w');
-fwrite($handle, $pid);
+$filename = 'gameState';
 
+$newFileName = '../writable/'.$filename.".json";
+$newFileContent = json_encode($pid);
+
+file_put_contents($newFileName, $newFileContent);//created a php file in writable
 
 $response = null; 
 $strat = null;
@@ -17,7 +18,7 @@ if (isset($_GET['strategy']))
         case "Smart":
             $response = array('response' => true, 'pid' => $pid);
         break;
-        case "Ranom":
+        case "Random":
             $response = array('response' => true, 'pid' => $pid);
         break;
         default:

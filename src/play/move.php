@@ -1,10 +1,9 @@
 <?php
 include 'board.php';
 
-
 $move = null;
 $ack_move = null;
-$response_move;
+$response_move = null;
 
 if(isset($_GET['move']))
 {
@@ -18,6 +17,7 @@ if($move == null)//no Strategy
 {
      $response_move =  array('response' => false, 'reason' => "Move  not specified");
 }
+
 else
 {
     $ack_move = array('slot' => $slot, 'isWin'=>$isWin,'isDraw'=>$isDraw,'row'=> $row);
