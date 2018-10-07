@@ -21,6 +21,7 @@ if(isset($_GET['move']))
     {
         $slot = $move;
         $ack_move = array('slot' => $slot, 'isWin'=>$isWin,'isDraw'=>$isDraw,'row'=> $row);
+        $ack_array = array_fill(0, 7, false)
     }
 }
 else

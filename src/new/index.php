@@ -17,6 +17,7 @@ if (isset($_GET['strategy']))
     switch ($strat) {
         case "Smart":
             $response = array('response' => true, 'pid' => $pid);
+            file_put_contents($newFileName, jsaon_encode("Smart"));
         break;
         case "Random":
             $response = array('response' => true, 'pid' => $pid);
