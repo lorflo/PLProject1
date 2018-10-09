@@ -23,15 +23,15 @@ if(isset($_GET['move']))
         $ack_state =  file_get_contents($ackState);
         $ackState_ = json_decode($ack_state);
       
-           for ($row = 5; $row >= 0; $row--)
+           for ($rownum = 5; $rownum >= 0; $rownum--)
             {
-                if($ackState_[$slot][$row] != null )
+                if($ackState_[$slot][$rownum] != null )
                 {
                     
                 }
                 else 
                 {
-                    $rowNum = $row;
+                    $rowNum = $rownum;
                     break;
                 }
             }

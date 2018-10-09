@@ -12,14 +12,19 @@ function isDraw()
     $board= json_decode($board_state);
     for ($i = 0; $i < 7; $i++) 
     {
-        if($board_[$i][0] != null)
+        for ($j = 0; $j < 6; $j++)
         {
-            $draw = true;
+            if($board[$i][$j] != null)
+            {
+                $draw = true;
+            }
+            else
+            {
+                $draw = false; ;
+            }
         }
-        else
-        {
-            $draw = false; ;
-        }
+       
+        
    }
     
     return $draw;

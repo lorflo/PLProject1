@@ -34,6 +34,7 @@ for ($row = 5; $row >= 0; $row--)
 $ackState_[$slot_c][$rowNum] = "RED";
 $update = json_encode($ackState_);
 file_put_contents('../writable/boardState.json', $update);
+
 $isWin_c = isWin();
 $isDraw_c = isDraw();
 
