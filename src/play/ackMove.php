@@ -40,7 +40,14 @@ if(isset($_GET['move']))
         $update = json_encode($ackState_);
        // echo $update;
         file_put_contents('../writable/boardState.json', $update);
-        $isWin = isWin();
+        
+        //Checks board for 4 in a row
+        $color = "Blue";
+        if(checkRow($slot,$rowNum,$color) || checkColumn($slot,$rowNum,$color) || checkDiagonalRow1($slot,$rowNum,$color) || checkDiagonalRow2($slot,$rowNum,$color)){
+            $isWin = true;
+        }else 
+            $isWin = false;
+        
         $isDraw = isDraw();
         $ack_move = array('slot' => $slot, 'isWin'=>$isWin,'isDraw'=>$isDraw,'row'=> $row);
 
