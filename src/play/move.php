@@ -34,7 +34,11 @@ for ($row = 5; $row >= 0; $row--)
 $ackState_[$slot_c][$rowNum] = "RED";
 $update = json_encode($ackState_);
 file_put_contents('../writable/boardState.json', $update);
-$isWin_c = isWin();
+
+if(checkRow($slot_c,$rowNum,$color) || checkColumn($slot_c,$rowNum,$color) || checkDiagonalRow1($slot_c,$rowNum,$color) || checkDiagonalRow2($slot,$rowNum,$color)){
+    $isWin_c = isWin();
+}else
+    $isWin_c = isWin();
 $isDraw_c = isDraw();
 
 
